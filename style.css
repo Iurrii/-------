@@ -1,4 +1,4 @@
-input[type="number"] {
+ input[type="number"] {
 
 	-moz-appearance: textfield;
 
@@ -6,7 +6,7 @@ input[type="number"] {
 
 	appearance: textfield;
 
-}
+};
 
 input[type="number"]::-webkit-outer-spin-button,
 
@@ -16,34 +16,37 @@ input[type="number"]::-webkit-inner-spin-button {
 
 }
 
-input {
-  border-radius: 10px;
-  width: 200px;
-  height: 30px;
-  padding: 5px 5px 5px 8px;
-  margin-top: 10px;
-  box-sizing: border-box;
-  border: none;
-  box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.06);
-}
 
-input:focus {
 
-}
-
-p {
+p, body {
   margin: 0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri,
+  'Trebuchet MS', sans-serif;
+}
+
+a {
+  color: white;
 }
 
 
 .page-container {
   width: 100%;
+  padding-top: 5vh;
+}
+
+.page-container__title {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 5vh;
 }
 
 .page-container__wrapper {
   display: flex;
-  width: fit-content;
-  margin: 7vh auto;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 7vh;
 
 }
 
@@ -51,7 +54,7 @@ p {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-right: 5vw;
+
 }
 
 .wrapper__right-column {
@@ -62,18 +65,22 @@ p {
 
 .sum {
   height: 150px;
+  font-size: 30px;
+  font-weight: 400;  
 }
 
 .current-payment {
   height: 150px;
+  font-size: 30px;
+ font-weight: 400;
 }
 
 .left-column__item {
-
+  margin-bottom: 1vh;
 }
 
 .right-column__item {
-
+  margin-bottom: 1vh;
 }
 
 .page-container__block-inputs {
@@ -81,7 +88,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  width: 400px;
+  width: 100%;
   margin: auto;
   padding-bottom: 20%;
 
@@ -123,4 +130,54 @@ p {
 
 .input-item__text{
 
+}
+
+.input-item__input {
+  border-radius: 10px;
+  width: 200px;
+  height: 30px;
+  padding: 5px 5px 5px 8px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #757575;
+  box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+
+
+
+
+/*FOOTER*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: #757575;
+  padding: 10px 20px;
+  height: 5vh;
+  font-weight: 400;
+  color: white;
+}
+@media (max-width: 575px) {
+  .footer {
+    height: 10vh;
+    min-height: 80px;
+    flex-direction: column;
+    align-items: baseline;
+    font-size: 14px;
+  }
+}
+
+.footer__left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: auto;
+}
+
+.footer__right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: auto;
 }

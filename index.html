@@ -6,58 +6,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
-  <title>Заголовок</title>
+  <title>Assistant for the cashier</title>
 </head>
 
 <body>
   <div class="page-container">
+    <h1 class="page-container__title">Тренажёр кассира</h1>
     <div class="page-container__wrapper">
       <div class="wrapper__left-coloumn">
-                <div class="left-column__item">Сумма покупки</div>
+        <div class="left-column__item">Сумма покупки</div>
         <div class="left-column__item sum"></div>
         <div class="left-column__item">Сдача:</div>
-        <div class="left-column__item then">то сдача</div>
-        <div class="left-column__item then">то сдача</div>
-        <div class="left-column__item then">то сдача</div>
-        <div class="left-column__item then">то сдача</div>
-        <div class="left-column__item then">то сдача</div>
-        <div class="left-column__item then">то сдача</div>
-        <div class="left-column__item then">то сдача</div>
-        <div class="left-column__item then">то сдача</div>
-        <div class="left-column__item then">то сдача</div>
+        <div class="left-column__item then">сумма</div>
+        <div class="left-column__item then">сумма</div>
+        <div class="left-column__item then">сумма</div>
+        <div class="left-column__item then">сумма</div>
+        <div class="left-column__item then">сумма</div>
+        <div class="left-column__item then">сумма</div>
+        <div class="left-column__item then">сумма</div>
+        <div class="left-column__item then">сумма</div>
+        <div class="left-column__item then">сумма</div>
       </div>
       <div class="wrapper__right-column">
-                <div class="right-column__item if" data="1">Оплата клиента</div>
+        <div class="right-column__item ">Оплата клиента</div>
         <div class="right-column__item current-payment"></div>
         <div class="right-column__item">Другая оплата:</div>
         <div class="right-column__item if" data="1">1 евро</div>
-        <div class="right-column__item if"data="2">2 евро</div>
-        <div class="right-column__item if"data="3">3 евро</div>
-        <div class="right-column__item if"data="4">4 евро</div>
-        <div class="right-column__item if"data="5">5 евро</div>
-        <div class="right-column__item if"data="10">10 евро</div>
-        <div class="right-column__item if"data="20">20 евро</div>
-        <div class="right-column__item if"data="50">50 евро</div>
-        <div class="right-column__item if"data="100">100 евро</div>
+        <div class="right-column__item if" data="2">2 евро</div>
+        <div class="right-column__item if" data="3">3 евро</div>
+        <div class="right-column__item if" data="4">4 евро</div>
+        <div class="right-column__item if" data="5">5 евро</div>
+        <div class="right-column__item if" data="10">10 евро</div>
+        <div class="right-column__item if" data="20">20 евро</div>
+        <div class="right-column__item if" data="50">50 евро</div>
+        <div class="right-column__item if" data="100">100 евро</div>
       </div>
     </div>
     <div class="page-container__block-inputs">
       <button class="block-inputs__btn">генерировать</button>
       <label class="block-inputs__input-item">
         <p class="input-item__text">Min сумма, евро</p>
-        <input type="number" value="1" id="min-value">
+        <input class="input-item__input" type="number" value="1" id="min-value">
       </label>
       <label class="block-inputs__input-item">
         <p>Max сумма, евро</p>
-        <input type="number" value="20" id="max-value">
+        <input class="input-item__input" type="number" value="20" id="max-value">
       </label>
       <label class="block-inputs__input-item">
         <p>Знаки после запятой</p>
-        <input type="number" min="0" value="2" id="decimal-places">
+        <input class="input-item__input" type="number" min="0" value="2" id="decimal-places">
       </label>
 
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="footer__left-col">
+      <p class="left-col__text"><a href="https://github.com/Iurrii/cash-register-simulator">GitHub проекта</a></p>
+      <p class="left-col__text"><a href="https://t.me/svejkys">Написать мне в Телеграм</a></p>
+    </div>
+    <div class="footer__right-col">
+      <p class="right-col__text">© 2022 Тёщин Юрий</p>
+    </div>
+
+  </footer>
 
 
   <script src="script.js"></script>
