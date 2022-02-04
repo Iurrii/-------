@@ -1,9 +1,6 @@
  input[type="number"] {
-
 	-moz-appearance: textfield;
-
 	-webkit-appearance: textfield;
-
 	appearance: textfield;
 
 };
@@ -11,12 +8,8 @@
 input[type="number"]::-webkit-outer-spin-button,
 
 input[type="number"]::-webkit-inner-spin-button {
-
 	display: none;
-
 }
-
-
 
 p, body {
   margin: 0;
@@ -27,7 +20,6 @@ p, body {
 a {
   color: white;
 }
-
 
 .page-container {
   width: 100%;
@@ -128,10 +120,6 @@ a {
   margin-bottom: 2vh;
 }
 
-.input-item__text{
-
-}
-
 .input-item__input {
   border-radius: 10px;
   width: 200px;
@@ -142,10 +130,6 @@ a {
   border: 1px solid #757575;
   box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.06);
 }
-
-
-
-
 
 /*FOOTER*/
 .footer {
