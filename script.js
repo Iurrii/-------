@@ -70,7 +70,7 @@ function getRandomValues() {
       sum.innerHTML = `${randomSum} евро`;
       currentPayment.innerHTML = `${randomPayment} евро`;
       
-      let randomSumTo005 roundTo005(randomSum);
+      let randomSumTo005 = roundTo005(randomSum);
 
       thenValues.push((elem - randomSumTo005).toFixed(decimalPlaces));
     })
