@@ -42,8 +42,10 @@
 
  .wrapper {
    max-width: 400px;
+   height: 100%;
    display: flex;
    flex-direction: column;
+   gap: 5px;
  }
 
  .wrapper__line {
@@ -59,15 +61,15 @@
  }
 
  .sum {
-   height: 150px;
    font-size: 30px;
    font-weight: 400;
+   height: 40px;
  }
 
  .current-payment {
-   height: 150px;
    font-size: 30px;
    font-weight: 400;
+   height: 40px;
  }
 
 
@@ -82,6 +84,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   padding: 10.5px;
  }
 
  .header__title {
@@ -110,10 +113,7 @@
 
  .page-container {
    width: 100%;
-   /*60 высота .header*/
-   /*132 высота верхней и нижней панелек*/
-   /*40 gap у body*/
-   height: calc(100vh - (60px + 132px + 40px));
+   height: 435px;
  }
 
  .page-container__block-inputs {
@@ -136,8 +136,7 @@
    padding: 5px;
    border: none;
    box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.06);
-   margin: auto;
-   margin-bottom: 40px;
+   margin: 40px auto;
 
  }
 
