@@ -84,14 +84,14 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   padding: 10.5px;
  }
 
  .header__title {
    display: block;
    text-transform: uppercase;
    text-align: center;
-   margin: auto;
+   /* margin: auto; */
+   font-size: 28px;
  }
 
 
