@@ -10,71 +10,91 @@
 </head>
 
 <body>
+  <header class="header">
+    <h1 class="page-container__title header__title">Тренажёр кассира</h1>
+  </header>
   <section class="page-container">
-    <h1 class="page-container__title">Тренажёр кассира</h1>
-    <div class="wrapper">
+    <div class="wrapper container">
 
       <div class="wrapper__line">
         <div class="wrapper__item">Сумма покупки</div>
         <div class="wrapper__item">Оплата клиента</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrarapper__item sum"></div>
         <div class="wrapper__item current-payment"></div>
       </div>
 
+      <!--BUTTON-->
       <button class="generate-btn">генерировать</button>
 
       <div class="wrapper__line">
         <div class="wrapper__item">Сдача:</div>
         <div class="wrapper__item">Другая оплата:</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrapper__item then">сумма</div>
         <div class="wrapper__item if" data="1">1 евро</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrapper__item then">сумма</div>
         <div class="wrapper__item if" data="2">2 евро</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrapper__item then">сумма</div>
         <div class="wrapper__item if" data="3">3 евро</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrapper__item then">сумма</div>
         <div class="wrapper__item if" data="4">4 евро</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrapper__item then">сумма</div>
         <div class="wrapper__item if" data="5">5 евро</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrapper__item then">сумма</div>
         <div class="wrapper__item if" data="10">10 евро</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrapper__item then">сумма</div>
         <div class="wrapper__item if" data="20">20 евро</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrapper__item then">сумма</div>
         <div class="wrapper__item if" data="50">50 евро</div>
       </div>
+
       <div class="wrapper__line">
         <div class="wrapper__item then">сумма</div>
         <div class="wrapper__item if" data="100">100 евро</div>
       </div>
     </div>
-    <div class="page-container__block-inputs">
+  </section>
+
+  <section class="settings">
+    <h3 class="settings__title">Настройки</h3>
+    <div class="page-container__block-inputs container">
+
       <label class="block-inputs__input-item">
         <p class="input-item__text">Min сумма, евро</p>
         <input class="input-item__input" type="number" value="1" id="min-value">
       </label>
+
       <label class="block-inputs__input-item">
         <p>Max сумма, евро</p>
         <input class="input-item__input" type="number" value="20" id="max-value">
       </label>
+
       <label class="block-inputs__input-item">
         <p>Знаки после запятой</p>
         <input class="input-item__input" type="number" min="0" value="2" id="decimal-places">
@@ -88,6 +108,7 @@
       <p class="left-col__text"><a href="https://github.com/Iurrii/cash-register-simulator">GitHub проекта</a></p>
       <p class="left-col__text"><a href="https://t.me/svejkys">Написать мне в Телеграм</a></p>
     </div>
+
     <div class="footer__right-col">
       <p class="right-col__text">© 2022 Тёщин Юрий</p>
     </div>

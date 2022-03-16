@@ -21,7 +21,7 @@ let previousElement = null;
 
 
 btnGenerate.addEventListener("click", () => {
-  getRandomValues();
+  generateValues();
 });
 
 //получает атрибуты элементов с классом if
@@ -33,7 +33,7 @@ getDataAttributesFromElementsOfArray(
 
 
 
-function getRandomValues() {
+function generateValues() {
   let thenValues = [];
   //сгенерировать рандомное значение суммы покупки согласно аргументам
   let randomSum = getRandomFloat(minValueSum, maxValueSum, decimalPlaces);
@@ -59,7 +59,7 @@ function getRandomValues() {
       elem.innerHTML = `${thenValues[index]} евро`;
     });
   } else {
-    getRandomValues();
+    generateValues();
   }
 }
 

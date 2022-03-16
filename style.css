@@ -16,22 +16,34 @@
      'Trebuchet MS', sans-serif;
  }
 
-
+ body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 40px;
+ }
+ 
  a {
    color: white;
  }
 
+ /*====модификаторы====*/
+ .active-line {
+   background-color: rgb(218, 245, 218);
+ }
 
+ .container {
+   width: 80vw;
+   margin: auto;
+ }
+
+ /*====модификаторы END====*/
 
 
  .wrapper {
-   width: 90vw;
    max-width: 400px;
-   margin: auto;
    display: flex;
    flex-direction: column;
-   padding: 10px 20px;
-   margin-bottom: 40px;
  }
 
  .wrapper__line {
@@ -60,33 +72,43 @@
 
 
 
- .active-line {
-   background-color: rgb(218, 245, 218);
-   ;
+
+
+
+
+ .header {
+   width: 100%;
+   height: 10vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
  }
+
+ .header__title {
+   text-transform: uppercase;
+ }
+
+
+
+ .settings {
+   width: 100%;
+   height: auto;
+ }
+
+ .settings__title {
+   text-align: center;
+   font-size: 18px;
+   font-weight: 600;
+   margin-bottom: 10px;
+ }
+
 
 
 
 
  .page-container {
    width: 100%;
-   padding-top: 5vh;
- }
-
- .page-container__title {
-   text-align: center;
-   text-transform: uppercase;
-   margin: 0;
-   margin-bottom: 5vh;
- }
-
- .page-container__wrapper {
-   display: flex;
-   justify-content: space-around;
-   width: 100%;
-   margin: auto;
-   margin-bottom: 7vh;
-
+   height: 90vh;
  }
 
  .page-container__block-inputs {
@@ -94,10 +116,6 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   width: 100%;
-   margin: auto;
-   padding-bottom: 20%;
-
  }
 
  .generate-btn {
@@ -128,8 +146,6 @@
    width: 200px;
    text-align: center;
    font-size: 18px;
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri,
-     'Trebuchet MS', sans-serif;
    margin-bottom: 2vh;
  }
 
@@ -139,37 +155,30 @@
    height: 30px;
    padding: 5px 5px 5px 8px;
    margin-top: 10px;
-   box-sizing: border-box;
    border: 1px solid #757575;
    box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.06);
  }
 
 
 
- /*FOOTER*/
+ /*==============FOOTER===============*/
 
 
 
 
  .footer {
    display: flex;
+   flex-direction: column;
+   align-items: flex-start;
    justify-content: space-between;
-   align-items: flex-end;
-   background: #757575;
-   padding: 10px 20px;
-   height: 5vh;
+   width: 100%;
+   min-height: 90px;
+   background: rgb(117, 117, 117);
+   background: linear-gradient(0deg, rgba(117, 117, 117, 1) 0%, rgba(150, 150, 150, 1) 100%);
+   padding: 15px 20px;
    font-weight: 400;
    color: white;
- }
-
- @media (max-width: 575px) {
-   .footer {
-     height: 10vh;
-     min-height: 80px;
-     flex-direction: column;
-     align-items: baseline;
-     font-size: 14px;
-   }
+   font-size: 14px;
  }
 
  .footer__left-col {
@@ -185,3 +194,5 @@
    justify-content: end;
    height: auto;
  }
+
+ @media (min-width: 575px) {}
