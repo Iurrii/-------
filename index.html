@@ -5,15 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
   <title>Assistant for the cashier</title>
 </head>
 
 <body>
-  <header class="header mar-bot">
-    <h1 class="header__title">Тренажёр кассира</h1>
+  <header class="header _mb-40">
+    <div class="container">
+      <h1 class="header__title">Тренажёр кассира</h1>
+    </div>
   </header>
-  <section class="table mar-bot">
+  <section class="table _mb-40">
     <div class="table-content container">
 
       <div class="table-content__line">
@@ -21,13 +23,13 @@
         <div class="table-content__item">Оплата клиента</div>
       </div>
 
-      <div class="table-content__line">
-        <div class="wrarapper__item sum"></div>
-        <div class="table-content__item current-payment"></div>
+      <div class="table-content__line _situation">
+        <div class="table-content__item js-sum"></div>
+        <div class="table-content__item js-payment"></div>
       </div>
 
       <!--BUTTON-->
-      <button class="generate-btn">генерировать</button>
+      <button class="generate-btn js-btn-generate">генерировать</button>
 
       <div class="table-content__line">
         <div class="table-content__item">Сдача:</div>
@@ -35,71 +37,73 @@
       </div>
 
       <div class="table-content__line">
-        <div class="table-content__item then">сумма</div>
-        <div class="table-content__item if" data="1">1 евро</div>
+        <div class="table-content__item js-then">сумма</div>
+        <div class="table-content__item js-if" data="1">1 евро</div>
       </div>
 
       <div class="table-content__line">
-        <div class="table-content__item then">сумма</div>
-        <div class="table-content__item if" data="2">2 евро</div>
+        <div class="table-content__item js-then">сумма</div>
+        <div class="table-content__item js-if" data="2">2 евро</div>
       </div>
 
       <div class="table-content__line">
-        <div class="table-content__item then">сумма</div>
-        <div class="table-content__item if" data="3">3 евро</div>
+        <div class="table-content__item js-then">сумма</div>
+        <div class="table-content__item js-if" data="3">3 евро</div>
       </div>
 
       <div class="table-content__line">
-        <div class="table-content__item then">сумма</div>
-        <div class="table-content__item if" data="4">4 евро</div>
+        <div class="table-content__item js-then">сумма</div>
+        <div class="table-content__item js-if" data="4">4 евро</div>
       </div>
 
       <div class="table-content__line">
-        <div class="table-content__item then">сумма</div>
-        <div class="table-content__item if" data="5">5 евро</div>
+        <div class="table-content__item js-then">сумма</div>
+        <div class="table-content__item js-if" data="5">5 евро</div>
       </div>
 
       <div class="table-content__line">
-        <div class="table-content__item then">сумма</div>
-        <div class="table-content__item if" data="10">10 евро</div>
+        <div class="table-content__item js-then">сумма</div>
+        <div class="table-content__item js-if" data="10">10 евро</div>
       </div>
 
       <div class="table-content__line">
-        <div class="table-content__item then">сумма</div>
-        <div class="table-content__item if" data="20">20 евро</div>
+        <div class="table-content__item js-then">сумма</div>
+        <div class="table-content__item js-if" data="20">20 евро</div>
       </div>
 
       <div class="table-content__line">
-        <div class="table-content__item then">сумма</div>
-        <div class="table-content__item if" data="50">50 евро</div>
+        <div class="table-content__item js-then">сумма</div>
+        <div class="table-content__item js-if" data="50">50 евро</div>
       </div>
 
       <div class="table-content__line">
-        <div class="table-content__item then">сумма</div>
-        <div class="table-content__item if" data="100">100 евро</div>
+        <div class="table-content__item js-then">сумма</div>
+        <div class="table-content__item js-if" data="100">100 евро</div>
       </div>
     </div>
   </section>
 
-  <section class="settings mar-bot">
-    <h3 class="settings__title">Настройки</h3>
-    <div class="settings__content container">
+  <section class="settings _mb-40">
+    <div class="container">
+      <h3 class="settings__title">Настройки</h3>
+      <div class="settings__content">
 
-      <label class="input">
-        <p class="input__text">Min сумма, евро</p>
-        <input class="input__input" type="number" value="1" id="min-value">
-      </label>
+        <label class="input">
+          <p class="input__text">Min сумма, евро</p>
+          <input class="input__input" type="number" value="1" id="min-value">
+        </label>
 
-      <label class="input">
-        <p class="input__text">Max сумма, евро</p>
-        <input class="input__input" type="number" value="20" id="max-value">
-      </label>
+        <label class="input">
+          <p class="input__text">Max сумма, евро</p>
+          <input class="input__input" type="number" value="20" id="max-value">
+        </label>
 
-      <label class="input">
-        <p class="input__text">Знаки после запятой</p>
-        <input class="input__input" type="number" min="0" value="2" id="decimal-places">
-      </label>
+        <label class="input">
+          <p class="input__text">Знаки после запятой</p>
+          <input class="input__input" type="number" min="0" value="2" id="decimal-places">
+        </label>
 
+      </div>
     </div>
   </section>
 
@@ -116,7 +120,7 @@
   </footer>
 
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

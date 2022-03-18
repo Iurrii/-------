@@ -1,4 +1,4 @@
-/*====СБРОСЫ-И-ОБЩИЕ-ПРАВИЛА====*/
+/*====resets-&-global-rules====*/
 input[type="number"] {
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
@@ -28,23 +28,24 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-/*====СБРОСЫ-И-ОБЩИЕ-ПРАВИЛА-END====*/
+/*====resets-&-global-rules-END====*/
 
-/*====модификаторы====*/
+/*====global-modifiers====*/
 .active-line {
   background-color: rgb(218, 245, 218);
 }
 
 .container {
   width: 80vw;
-  margin: auto;
+  margin: 0 auto;
+  max-width: 400px;
 }
 
-.mar-bot {
+._mb-40 {
   margin-bottom: 40px;
 }
 
-/*====модификаторы-END====*/
+/*====global-modifiers-END====*/
 
 .generate-btn {
   display: block;
@@ -57,27 +58,28 @@ body {
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 500;
-  background-color: green;
-  color: white;
+  background-color: #008000;
+  color: #fff;
   box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 .generate-btn:active {
-  background-color: white;
-  color: green;
+  background-color: #fff;
+  color: #008000;
 }
 
-.sum {
-  height: 40px;
-  font-size: 30px;
-  font-weight: 400;
-}
+/*JS-CLASSES*/
+.js-sum {}
 
-.current-payment {
-  height: 40px;
-  font-size: 30px;
-  font-weight: 400;
-}
+.js-payment {}
+
+.js-btn-generate {}
+
+.js-if {}
+
+.js-then {}
+
+/*JS-CLASSES-END*/
 
 /*BLOCK-HEADER*/
 
@@ -102,13 +104,13 @@ body {
 .table {
   width: 100%;
   height: 435px;
+  font-weight: 400;
 }
 
 .table-content {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-width: 400px;
   gap: 5px;
 }
 
@@ -122,6 +124,11 @@ body {
   display: block;
   align-items: center;
   width: auto;
+}
+
+._situation {
+  height: 40px;
+  font-size: 30px;
 }
 
 /*BLOCK-TABLE-END*/
@@ -188,7 +195,7 @@ body {
   background: linear-gradient(0deg,
       rgba(117, 117, 117, 1) 0%,
       rgba(150, 150, 150, 1) 100%);
-  color: white;
+  color: #fff;
   min-height: 90px;
 }
 
@@ -207,9 +214,7 @@ body {
 }
 
 .footer__link {
-  color: white;
+  color: #fff;
 }
-
-@media (min-width: 575px) {}
 
 /*BLOCK-FOOTER-END*/

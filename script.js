@@ -1,28 +1,27 @@
-//пользовательские настройки и элементы управления
+//====DATA====//
+
+//sources of settings and controls elements from DOM
 let minValueSum = +document.getElementById("min-value").value;
 let maxValueSum = +document.getElementById("max-value").value;
 let decimalPlaces = +document.getElementById("decimal-places").value;
-let btnGenerate = document.querySelector(".generate-btn");
+let btnGenerate = document.querySelector(".js-btn-generate");
 
-//точки вывода данных
-let sum = document.querySelector(".sum");
-let currentPayment = document.querySelector(".current-payment");
+//outputs
+let sum = document.querySelector(".js-sum");
+let currentPayment = document.querySelector(".js-payment");
 
-//nodeList'ы
-let thenElements = document.querySelectorAll(".then");
-let ifElements = document.querySelectorAll(".if");
+//nodeLists
+let thenElements = document.querySelectorAll(".js-then");
+let ifElements = document.querySelectorAll(".js-if");
 
-//JS переменные
+//JS variables
 const ifValues = [];
 const thenValues = [];
 const banknotes = [1, 2, 3, 4, 5, 10, 20, 50, 100];
-let previousElement = null;
+//====DATA-END====//
 
 
-
-btnGenerate.addEventListener("click", () => {
-  generateValues();
-});
+//====CODE====//
 
 //получает атрибуты элементов с классом if
 //записывает их в массив ifValues
@@ -31,26 +30,34 @@ getDataAttributesFromElementsOfArray(
   ifValues
 );
 
+btnGenerate.addEventListener("click", () => {
+  generateValues();
+});
+//====CODE-END====//
 
+
+//====FUNCTIONS====//
 
 function generateValues() {
   let thenValues = [];
   //сгенерировать рандомное значение суммы покупки согласно аргументам
-  let randomSum = getRandomFloat(minValueSum, maxValueSum, decimalPlaces);
+  let randomSum = getRandomNumber(minValueSum, maxValueSum, decimalPlaces);
   //сгенерировать рандомное значение оплаты клиента
-  let randomPayment = arrayRandElement(banknotes);
-
-  //найти и изменить элемент
-  searchParentForElementWithData(ifElements, randomPayment);
+  //переделать на использование ifValues
+  let randomPayment = getValueRandElemFromArr(banknotes);
 
   if (randomPayment >= randomSum) {
     ifValues.map((elem) => {
       let randomSumTo005 = roundTo005(randomSum);
-      //в массив thenValues записать округлённое значение выражения 
+      //в массив thenValues записать округлённое значение выражения
       thenValues.push((elem - randomSumTo005).toFixed(decimalPlaces));
     });
 
-    //вывести на экран рандомную сумму и рандомный платёж
+    //найти родителя элемента-переменной randomPayment и изменить его класс
+    let elementPayment = getParentForElemWithData(ifElements, randomPayment);
+    toggleClassToActiveElem(ifElements, elementPayment, "active-line");
+
+    //вывести на экран randomSum и randomPayment
     sum.innerHTML = `${randomSum} евро`;
     currentPayment.innerHTML = `${randomPayment} евро`;
 
@@ -63,6 +70,7 @@ function generateValues() {
   }
 }
 
+//get an array from a NodeList
 //функция получает массив из нодлиста
 function getArrayFromNodeList(nodeList) {
   return Array.from(nodeList);
@@ -77,47 +85,39 @@ function getDataAttributesFromElementsOfArray(fromArray, toArray) {
   });
 }
 
-//функция ищет родителя у элемента из списка элементов с заданным data
-function searchParentForElementWithData(listOfElements, data) {
-  listOfElements.forEach((item) => {
+//функция ищет родителя у элемента с заданным data из списка элементов 
+function getParentForElemWithData(arr, data) {
+  let parent = null;
 
+  arr.forEach((item) => {
     let dataAttribute = +item.getAttribute("data");
+    dataAttribute === data && (parent = item.parentElement)
+  });
+  return parent;
+}
 
-    if (dataAttribute === data) {
-
-      previousElement = item.parentElement;
-      //если текущий элемент != прошлому
-      if (item.parentElement !== previousElement) {
-        //переключить класс у найденного элемента
-        highlightingElementToggle(item.parentElement, "active-line");  
-        
-      } else {
-        item.parentElement.classList.add('active-line');
-      }
-
-    } else {
-      item.parentElement.classList.remove("active-line");
+function toggleClassToActiveElem(arr, elem, className) {
+  arr.forEach((item) => {
+      item.parentElement.classList.remove(className);
+    if (item.parentElement === elem) {
+      item.parentElement.classList.toggle(className);
     }
   });
 }
 
-//переключает класс у элемента
-function highlightingElementToggle(element, className) {
-  element.classList.toggle(className);
-}
-
 //функция возвращает рандомное число в промежутке min-max и
 //округляет его до decimal знаков после запятой
-function getRandomFloat(min, max, decimal) {
+function getRandomNumber(min, max, decimal) {
   return (Math.random() * (max - min) + min).toFixed(decimal);
 }
 
 //функция возвращает значение рандомного элемента массива
-function arrayRandElement(arr) {
-  var rand = Math.floor(Math.random() * arr.length);
-  return arr[rand];
+function getValueRandElemFromArr(arr) {
+  var randomElem = Math.floor(Math.random() * arr.length);
+  return arr[randomElem];
 }
 
+//round the value of the number to 0.05
 //функция округляет значение числа до 0.05
 function roundTo005(num) {
   return Math.round(num / 0.05) * 0.05;
